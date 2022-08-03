@@ -70,80 +70,139 @@ const gameplayManagement = (() => {
   const players = [
     {
       name: 'Rick',
-      marker: 'rick'
+      marker: 'rick',
+      catchphrase: 'Aids'
     },
     {
       name: 'Morty',
-      marker: 'morty'
+      marker: 'morty',
+      catchphrase: 'Oh jeez'
     },
     {
       name: 'Summer',
-      marker: 'summer'
+      marker: 'summer',
+      catchphrase: "Let's lick tits"
     },
     {
       name: 'Jerry',
-      marker: 'jerry'
+      marker: 'jerry',
+      catchphrase: 'I think I can crawl through a tube'
     },
     {
       name: 'Ants In My Eyes Johnson',
-      marker: 'ants'
+      marker: 'ants',
+      catchphrase: "Everything's black!"
     },
     {
       name: 'Chair Waiter',
-      marker: 'chairwaiter'
+      marker: 'chairwaiter',
+      catchphrase: 'Aids!'
     },
     {
       name: 'Alan Rails',
-      marker: 'alanrails'
+      marker: 'alanrails',
+      catchphrase: 'I could have just used a ghost train'
     },
     {
       name: 'Einstein Rick',
-      marker: 'einstein'
+      marker: 'einstein',
+      catchphrase: 'Aids!'
     },
     {
       name: 'Fishhead Rick',
-      marker: 'fishheadrick'
+      marker: 'fishheadrick',
+      catchphrase: 'Aids!'
     },
     {
       name: 'Fishhead Morty',
-      marker: 'fishheadmorty'
+      marker: 'fishheadmorty',
+      catchphrase: 'Aids!'
     },
     {
       name: 'Baby Legs',
-      marker: 'babylegs'
+      marker: 'babylegs',
+      catchphrase: 'Ooh I learned a valuable lesson here today'
     },
     {
       name: 'Beth',
-      marker: 'beth'
+      marker: 'beth',
+      catchphrase: 'Aids!'
     },
     {
       name: 'Amber Heard',
-      marker: 'amberturd'
+      marker: 'amberturd',
+      catchphrase: 'Aids!'
     },
     {
       name: 'Big Morty',
-      marker: 'bigmorty'
+      marker: 'bigmorty',
+      catchphrase: 'Ah, Bubblah'
     },
     {
       name: 'Bird Person',
-      marker: 'birdperson'
+      marker: 'birdperson',
+      catchphrase: 'Aids'
     },
     {
-      name: 'Plumbus Worker',
-      marker: 'plumbus'
+      name: 'Blamphs',
+      marker: 'plumbus',
+      catchphrase: 'Are you using this Fleeb juice'
     },
     {
       name: 'Evil Morty', 
-      marker: 'evilmorty'
+      marker: 'evilmorty',
+      catchphrase: 'Aids!'
     },
     {
       name: 'Blim Blam',
-      marker: 'blimblam'
+      marker: 'blimblam',
+      catchphrase: 'Best door ever'
     },
     {
       name: 'Bobby Moynihan',
-      marker: 'bobby'
-    }
+      marker: 'bobby',
+      catchphrase: 'Aids!'
+    },
+    {
+      name: 'Dumb Ass Bug',
+      marker: 'dumbassbug',
+      catchphrase: "I'm just a dumb-ass bug"
+    },
+    {
+      name: 'Chris',
+      marker: 'chris',
+      catchphrase: "Peace among worlds"
+    },
+    {
+      name: 'Concerto',
+      marker: 'concerto',
+      catchphrase: "Peace among worlds"
+    },
+    {
+      name: 'Cool Rick',
+      marker: 'coolrick',
+      catchphrase: "What can I say? I'm cool Rick"
+    },
+    {
+      name: 'Cop Morty',
+      marker: 'copmorty',
+      catchphrase: "Nothing's wrong with putting your faith in a Morty."
+    },
+    {
+      name: 'Cousin Nicky',
+      marker: 'cousinnicky',
+      catchphrase: "I'm walkin' here"
+    },
+    {
+      name: 'Crocubot',
+      marker: 'crocubot',
+      catchphrase: "You fell into a vat of redundancy"
+    },
+    {
+      name: 'Daron Jefferson',
+      marker: 'dale',
+      catchphrase: "The cone-nipple people will rule this world"
+    },
   ]
 
   function rando(min, max) {
@@ -202,7 +261,7 @@ const gameplayManagement = (() => {
       if(gameBoard.board[item[0]] === this.activePlayer.marker && gameBoard.board[item[1]] === this.activePlayer.marker && gameBoard.board[item[2]] === this.activePlayer.marker) {
         this.announceWinner = true
         const subHead = document.querySelector('#subHead')
-        subHead.innerText = `${this.activePlayer.name} wins!`
+        subHead.innerText = `${this.activePlayer.catchphrase}! ${this.activePlayer.name} wins!`
         muteBoard()
         resetGame()
       }

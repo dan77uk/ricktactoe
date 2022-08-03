@@ -135,10 +135,13 @@ header h1 {
 .evilmorty { background: url('images/evilmorty.jpeg') no-repeat; } 
 .blimblam { background: url('images/blimblam.jpeg') no-repeat; } 
 .bobby { background: url('images/bobby.jpeg') no-repeat; } 
-
-
-
-
+.dumbassbug { background: url('images/dumbassbug.jpeg') no-repeat; } 
+.chris { background: url('images/chris.jpeg') no-repeat; } 
+.concerto { background: url('images/concerto.jpeg') no-repeat; }
+.coolrick { background: url('images/coolrick.jpeg') no-repeat; }
+.copmorty { background: url('images/copmorty.jpeg') no-repeat; }
+.cousinnicky { background: url('images/cousinnicky.jpeg') no-repeat; }
+.crocubot { background: url('images/crocubot.jpeg') no-repeat; }
 
 
 #reset {
