@@ -141,7 +141,7 @@ const gameplayManagement = (() => {
     {
       name: 'Bird Person',
       marker: 'birdperson',
-      catchphrase: 'Aids'
+      catchphrase: "Don't be gross Tammy"
     },
     {
       name: 'Blamphs',
@@ -151,7 +151,7 @@ const gameplayManagement = (() => {
     {
       name: 'Evil Morty', 
       marker: 'evilmorty',
-      catchphrase: 'Aids!'
+      catchphrase: 'This seems like a good time for a drink, and a cold, calculated speech with sinister overtones'
     },
     {
       name: 'Blim Blam',
@@ -200,7 +200,7 @@ const gameplayManagement = (() => {
     },
     {
       name: 'Daron Jefferson',
-      marker: 'dale',
+      marker: 'daron',
       catchphrase: "The cone-nipple people will rule this world"
     },
   ]
