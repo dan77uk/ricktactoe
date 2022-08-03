@@ -34,6 +34,26 @@ const gameBoard = (() => {
 
 const gameplayManagement = (() => {
 
+  // Create two players
+  const rick = playerFactory('Rick', 'O')
+  const morty = playerFactory('Morty', 'X')
+
+  function randomPlayerStart() {
+    const num = Math.floor((Math.random() * 2) + 1)
+    if (num === 1) {
+      return rick
+    } else {
+      return morty
+    }
+  }
+
+  // Decide which player starts game and announce on the DOM
+  let activePlayer = randomPlayerStart()
+  const initialGreeting = `${activePlayer.name}, you're up first`
+  let playerName = document.querySelector('#player-name')
+  playerName.innerText = initialGreeting
+  
+
   const winningCombinations = [
     [0,1,2],
     [3,4,5],
