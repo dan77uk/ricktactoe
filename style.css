@@ -1,3 +1,11 @@
+*, ::after, ::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+  list-style-type: none;
+}
+
 #gameBoard {
   margin: 0 auto;
   width: 480px;
@@ -20,4 +28,18 @@
   width: 100%;
   caret-color: rgba(0,0,0,0);
   transition: opacity 1s;
+}
+
+@media only screen and (max-width: 540px) {
+  #gameBoard {
+    width: 360px;
+    height: 360px;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  #gameBoard {
+    width: 240px;
+    height: 240px;
+  }
 }
