@@ -1,3 +1,11 @@
+// Create player objects factory function
+const playerFactory = (name, marker) => {
+  return {
+    name,
+    marker
+  }
+}
+
 const gameBoard = (() => { 
 
   // Create empty array for new game
@@ -11,6 +19,7 @@ const gameBoard = (() => {
     cells.appendChild(cell)
   })
 
+  // Add event listeners to each cell/square on board
   Array.from(cells.children)
     .forEach((cell, index) => {
       cell.addEventListener('click', () => {
@@ -21,5 +30,19 @@ const gameBoard = (() => {
   return {
     board
   }
+})()
+
+const gameplayManagement = (() => {
+
+  const winningCombinations = [
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
+    [0,3,6],
+    [1,4,7],
+    [2,5,8],
+    [0,4,8],
+    [2,4,6],
+  ]
 
 })()
