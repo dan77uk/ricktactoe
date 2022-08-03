@@ -23,7 +23,15 @@ const gameBoard = (() => {
   Array.from(cells.children)
     .forEach((cell, index) => {
       cell.addEventListener('click', () => {
-        console.log(cell)
+
+        // Update DOM board
+        cell.classList.add(gameplayManagement.activePlayer.marker)
+
+        // Remove event listener from completed cell/square
+        cell.style.pointerEvents = 'none'
+
+        // Update board array
+        board[index] = gameplayManagement.activePlayer.marker
       })
     })
 
@@ -64,5 +72,9 @@ const gameplayManagement = (() => {
     [0,4,8],
     [2,4,6],
   ]
+
+  return {
+    activePlayer
+  }
 
 })()

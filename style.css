@@ -28,6 +28,23 @@
   width: 100%;
   caret-color: rgba(0,0,0,0);
   transition: opacity 1s;
+  cursor:pointer;
+}
+
+.square:hover {
+  background: #1d8186;
+  transition: 700ms;
+}
+
+.O {
+  background: url("images/rick.png") no-repeat #eede78;
+  background-position: bottom;
+}
+
+.X {
+  background: url("images/morty.png") no-repeat #08c29d;
+  background-position: bottom;
+  /* bottom: 0; */
 }
 
 @media only screen and (max-width: 540px) {
