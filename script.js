@@ -57,6 +57,7 @@ const gameplayManagement = (() => {
   const rick = playerFactory('Rick', 'O')
   const morty = playerFactory('Morty', 'X')
 
+  // Function to randomly select player
   function randomPlayerStart() {
     const num = Math.floor((Math.random() * 2) + 1)
     if (num === 1) {
@@ -68,13 +69,15 @@ const gameplayManagement = (() => {
 
   // Decide which player starts game and announce on the DOM
   let activePlayer = randomPlayerStart()
-  const initialGreeting = `${activePlayer.name}, you're up first`
+  const initialGreeting = `${activePlayer.name}, you're up first `
   let playerName = document.querySelector('#player-name')
   playerName.innerText = initialGreeting
 
+  // Initial game state
   let remainingCells = 9
   let announceWinner = false
   
+  // Winning conditions
   const winningCombinations = [
     [0,1,2],
     [3,4,5],
@@ -87,7 +90,7 @@ const gameplayManagement = (() => {
   ]
 
   function checkWinner() {
-    winningCombinations.forEach((item, index) => {
+    winningCombinations.forEach((item) => {
       if(gameBoard.board[item[0]] === this.activePlayer.marker && gameBoard.board[item[1]] === this.activePlayer.marker && gameBoard.board[item[2]] === this.activePlayer.marker) {
         this.announceWinner = true
         const subHead = document.querySelector('#subHead')
@@ -109,6 +112,7 @@ const gameplayManagement = (() => {
   function tieGame() {
     const subHead = document.querySelector('#subHead')
     subHead.innerText = 'Tie game!'
+    resetGame()
   }
 
   function muteBoard() {
@@ -120,7 +124,11 @@ const gameplayManagement = (() => {
 
   function resetGame() {
     const resetButton = document.createElement('button')
-    const container = document.querySelector('#intro')
+    const container = document.querySelector('#bodyWrapper')
+    const gameboard = document.querySelector('#gameBoard')
+    gameboard.style.opacity = '.7'
+
+    resetButton.id = 'reset'
     resetButton.textContent = 'Play Again?'
     container.append(resetButton)
     resetButton.addEventListener('click', () => {
