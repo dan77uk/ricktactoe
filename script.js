@@ -27,17 +27,28 @@ const gameBoard = (() => {
         // Update DOM board
         cell.classList.add(gameplayManagement.activePlayer.marker)
 
-        // Remove event listener from completed cell/square
+        // Remove event listener from completed cell/square and reduce remaining available cells
         cell.style.pointerEvents = 'none'
+        gameplayManagement.remainingCells -= 1
 
         // Update board array
         board[index] = gameplayManagement.activePlayer.marker
+
+        // Check if game has a winner | select next player if false, anounce winner if true
+        gameplayManagement.checkWinner()
+
+        if(gameplayManagement.announceWinner === false) { // If there is no winner
+          if(gameplayManagement.remainingCells > 0) { // If there are still squares to play
+            gameplayManagement.alertNextPlayer()
+            gameplayManagement.nextPlayer()
+          } else if (gameplayManagement.remainingCells < 1) { // If there are no squares left to play, announce tie game
+            gameplayManagement.tieGame()
+          }
+        }
       })
     })
 
-  return {
-    board
-  }
+  return { board }
 })()
 
 const gameplayManagement = (() => {
@@ -60,8 +71,10 @@ const gameplayManagement = (() => {
   const initialGreeting = `${activePlayer.name}, you're up first`
   let playerName = document.querySelector('#player-name')
   playerName.innerText = initialGreeting
-  
 
+  let remainingCells = 9
+  let announceWinner = false
+  
   const winningCombinations = [
     [0,1,2],
     [3,4,5],
@@ -73,8 +86,56 @@ const gameplayManagement = (() => {
     [2,4,6],
   ]
 
-  return {
-    activePlayer
+  function checkWinner() {
+    winningCombinations.forEach((item, index) => {
+      if(gameBoard.board[item[0]] === this.activePlayer.marker && gameBoard.board[item[1]] === this.activePlayer.marker && gameBoard.board[item[2]] === this.activePlayer.marker) {
+        this.announceWinner = true
+        const subHead = document.querySelector('#subHead')
+        subHead.innerText = `${this.activePlayer.name} wins!`
+        muteBoard()
+        resetGame()
+      }
+    })
   }
 
+  function alertNextPlayer() {
+    this.activePlayer === rick ? playerName.innerText = morty.name : playerName.innerText = rick.name
+  }
+
+  function nextPlayer() {
+    this.activePlayer === rick ? this.activePlayer = morty : this.activePlayer = rick
+  }
+
+  function tieGame() {
+    const subHead = document.querySelector('#subHead')
+    subHead.innerText = 'Tie game!'
+  }
+
+  function muteBoard() {
+    const cells = document.querySelector('#gameBoard')
+    Array.from(cells.children).forEach((cell) => {
+      cell.style.pointerEvents = 'none'
+    })
+  }
+
+  function resetGame() {
+    const resetButton = document.createElement('button')
+    const container = document.querySelector('#intro')
+    resetButton.textContent = 'Play Again?'
+    container.append(resetButton)
+    resetButton.addEventListener('click', () => {
+      window.location.reload(false)
+    })
+  }
+
+  return {
+    activePlayer,
+    remainingCells,
+    announceWinner,
+    alertNextPlayer,
+    nextPlayer,
+    checkWinner,
+    tieGame,
+  }
 })()
+
