@@ -17,38 +17,43 @@ html {
 html, body {
   width: 100%;
   height: 100%;
+  margin: 0;
 }
 
-/* #bodyWrapper {
-  width: 100%;
-  height: 100%;
-} */
+#bodyWrapper {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr;
+}
 
 header {
   max-width: 1280px;
-  margin: 0 auto 0 auto;
+  margin: 0 auto;
   text-align: center;
 }
 
 header h1 {
-  font-size: 7em;
+  font-size: 6em;
+  padding: 40px 0;
   color: #eede78;
   font-family: 'Permanent Marker', cursive;
-  transform: rotate(-4deg);
-  filter: drop-shadow(10px 10px 25px #0cdbff);
+  transform: rotate(-3deg);
+  filter: drop-shadow(10px 10px 15px #000000);
 }
 
-header #intro {
-  margin: 60px auto 60px auto;
+#intro {
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  display: none;
 }
 
-header #intro p {
+#intro p {
   background: #ee7878;
   padding: 20px 90px;
-  transform: rotate(1deg);
+  transform: rotate(-2deg);
   font-size: 1rem;
   box-shadow:15px 10px 20px rgb(22, 22, 22);
   border-radius: 50px 15px 50px 15px;
@@ -57,7 +62,27 @@ header #intro p {
   font-size: 1.5rem;
 }
 
+#versusInfo {
+  color: rgb(107, 19, 19);
+  position: fixed;
+  width: 110%;
+  top: 40%;
+  transform: translate(0, -50%);
+  font-family: 'Permanent Marker', cursive;
+  font-size: 2rem;
+  padding: 50px 150px;
+  text-align: center;
+  transform: rotate(-4deg);
+  margin-left: -5%;
+  background: rgb(249,21,103);
+  background: linear-gradient(193deg, rgba(249,21,103,1) 0%, rgba(228,58,182,1) 24%, rgba(255,216,0,1) 100%); 
+}
+
 #gameBoard {
+  /* position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
   margin: 0 auto;
   width: 480px;
   height: 480px;
@@ -68,7 +93,7 @@ header #intro p {
   border: solid 10px #ee7878;
   border-radius: 10px;
   box-shadow: 1px 1px 1px 10px #eede78, 1px 1px 1px 15px #e4d724;
-  transform: rotate(-2deg);
+  transform: rotate(2deg);
 }
 
 .square {
@@ -81,6 +106,9 @@ header #intro p {
   caret-color: rgba(0,0,0,0);
   transition: opacity 1s;
   cursor:pointer;
+  background-size: 160px !important;
+  /* background-position: bottom; */
+
 }
 
 .square:hover {
@@ -88,20 +116,37 @@ header #intro p {
   transition: 700ms;
 }
 
-.O {
-  background: url("images/rick.png") no-repeat #eede78;
-  background-position: bottom;
-}
+.rick { background: url("images/rick.jpeg") no-repeat; }
+.morty { background: url("images/morty.png") no-repeat; }
+.summer { background: url("images/summer.jpeg") no-repeat; }
+.jerry { background: url("images/jerry.png") no-repeat; }
+.ants { background: url("images/antsinmyeyes.jpeg") no-repeat;}
+.chairwaiter { background: url("images/chairwaiter.jpeg") no-repeat; }
+.alanrails { background: url("images/alanrails.jpeg") no-repeat; }
+.einstein { background: url("images/einstein.jpeg") no-repeat; }
+.fishheadrick { background: url("images/fishheadrick.jpeg") no-repeat; }
+.fishheadmorty { background: url("images/fishheadmorty.jpeg") no-repeat;}
+.babylegs { background: url('images/babylegs.jpeg') no-repeat; }
+.beth { background: url('images/beth.jpeg') no-repeat; }
+.amberturd { background: url('images/amberturd.jpeg') no-repeat; }
+.bigmorty { background: url('images/bigmorty.jpeg') no-repeat; }
+.birdperson { background: url('images/birdperson.png') no-repeat; }
+.plumbus { background: url('images/plumbus.jpeg') no-repeat; }
+.evilmorty { background: url('images/evilmorty.jpeg') no-repeat; } 
+.blimblam { background: url('images/blimblam.jpeg') no-repeat; } 
+.bobby { background: url('images/bobby.jpeg') no-repeat; } 
 
-.X {
-  background: url("images/morty.png") no-repeat #08c29d;
-  background-position: bottom;
-  /* bottom: 0; */
-}
+
+
+
+
 
 #reset {
-  margin: auto;
-  padding: 20px 60px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 50px 150px;
 
 }
 

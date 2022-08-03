@@ -54,24 +54,132 @@ const gameBoard = (() => {
 const gameplayManagement = (() => {
 
   // Create two players
-  const rick = playerFactory('Rick', 'O')
-  const morty = playerFactory('Morty', 'X')
+  // const playerA = playerFactory('Rick', 'O')
+  // const playerB = playerFactory('Chair Waiter', 'S')
 
   // Function to randomly select player
   function randomPlayerStart() {
     const num = Math.floor((Math.random() * 2) + 1)
     if (num === 1) {
-      return rick
+      return playerA
     } else {
-      return morty
+      return playerB
     }
   }
+
+  const players = [
+    {
+      name: 'Rick',
+      marker: 'rick'
+    },
+    {
+      name: 'Morty',
+      marker: 'morty'
+    },
+    {
+      name: 'Summer',
+      marker: 'summer'
+    },
+    {
+      name: 'Jerry',
+      marker: 'jerry'
+    },
+    {
+      name: 'Ants In My Eyes Johnson',
+      marker: 'ants'
+    },
+    {
+      name: 'Chair Waiter',
+      marker: 'chairwaiter'
+    },
+    {
+      name: 'Alan Rails',
+      marker: 'alanrails'
+    },
+    {
+      name: 'Einstein Rick',
+      marker: 'einstein'
+    },
+    {
+      name: 'Fishhead Rick',
+      marker: 'fishheadrick'
+    },
+    {
+      name: 'Fishhead Morty',
+      marker: 'fishheadmorty'
+    },
+    {
+      name: 'Baby Legs',
+      marker: 'babylegs'
+    },
+    {
+      name: 'Beth',
+      marker: 'beth'
+    },
+    {
+      name: 'Amber Heard',
+      marker: 'amberturd'
+    },
+    {
+      name: 'Big Morty',
+      marker: 'bigmorty'
+    },
+    {
+      name: 'Bird Person',
+      marker: 'birdperson'
+    },
+    {
+      name: 'Plumbus Worker',
+      marker: 'plumbus'
+    },
+    {
+      name: 'Evil Morty', 
+      marker: 'evilmorty'
+    },
+    {
+      name: 'Blim Blam',
+      marker: 'blimblam'
+    },
+    {
+      name: 'Bobby Moynihan',
+      marker: 'bobby'
+    }
+  ]
+
+  function rando(min, max) {
+    return Math.floor(Math.random() * (max - min) + min)
+  }
+
+  function playerSelect() {
+    return players[rando(0, players.length)]
+  }
+
+
+  const playerA = playerSelect()
+  let playerB = playerSelect()
+  if (playerA === playerB) { playerB = playerSelect() }
 
   // Decide which player starts game and announce on the DOM
   let activePlayer = randomPlayerStart()
   const initialGreeting = `${activePlayer.name}, you're up first `
   let playerName = document.querySelector('#player-name')
-  playerName.innerText = initialGreeting
+  // playerName.innerText = initialGreeting
+
+  const containerMain = document.querySelector('#bodyWrapper')
+  const versusTitle = document.createElement('h3')
+  versusTitle.id = 'versusInfo'
+  versusTitle.innerText = `It's ${playerA.name} taking on ${playerB.name}`
+  containerMain.append(versusTitle)
+  
+  setTimeout(() => {
+    versusTitle.style.display = 'none'
+    const test = document.querySelector('#intro')
+    const wrapper = document.querySelector('#bodyWrapper')
+    test.style.display = 'flex'
+    wrapper.style.background = 'rgba(23,45,56,.8)'
+    playerName.innerText = initialGreeting
+  }, 2000)
+  
 
   // Initial game state
   let remainingCells = 9
@@ -102,11 +210,11 @@ const gameplayManagement = (() => {
   }
 
   function alertNextPlayer() {
-    this.activePlayer === rick ? playerName.innerText = morty.name : playerName.innerText = rick.name
+    this.activePlayer === playerA ? playerName.innerText = playerB.name : playerName.innerText = playerA.name
   }
 
   function nextPlayer() {
-    this.activePlayer === rick ? this.activePlayer = morty : this.activePlayer = rick
+    this.activePlayer === playerA ? this.activePlayer = playerB : this.activePlayer = playerA
   }
 
   function tieGame() {
