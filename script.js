@@ -11,6 +11,13 @@ const gameBoard = (() => {
     cells.appendChild(cell)
   })
 
+  Array.from(cells.children)
+    .forEach((cell, index) => {
+      cell.addEventListener('click', () => {
+        console.log(cell)
+      })
+    })
+
   return {
     board
   }
