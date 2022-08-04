@@ -25,7 +25,11 @@ const gameBoard = (() => {
       cell.addEventListener('click', () => {
 
         // Update DOM board
+        const playerImage = document.createElement('img')
+        playerImage.src = gameplayManagement.activePlayer.image
+        cell.append(playerImage)
         cell.classList.add(gameplayManagement.activePlayer.marker)
+        
 
         // Remove event listener from completed cell/square and reduce remaining available cells
         cell.style.pointerEvents = 'none'
@@ -53,10 +57,6 @@ const gameBoard = (() => {
 
 const gameplayManagement = (() => {
 
-  // Create two players
-  // const playerA = playerFactory('Rick', 'O')
-  // const playerB = playerFactory('Chair Waiter', 'S')
-
   // Function to randomly select player
   function randomPlayerStart() {
     const num = Math.floor((Math.random() * 2) + 1)
@@ -71,138 +71,140 @@ const gameplayManagement = (() => {
     {
       name: 'Rick',
       marker: 'rick',
-      catchphrase: 'Aids'
+      catchphrase: 'Aids',
+      image: 'images/rick.jpeg' 
     },
     {
       name: 'Morty',
       marker: 'morty',
-      catchphrase: 'Oh jeez'
+      catchphrase: 'Oh jeez',
+      image: 'images/morty.png'
     },
-    {
-      name: 'Summer',
-      marker: 'summer',
-      catchphrase: "Let's lick tits"
-    },
-    {
-      name: 'Jerry',
-      marker: 'jerry',
-      catchphrase: 'I think I can crawl through a tube'
-    },
-    {
-      name: 'Ants In My Eyes Johnson',
-      marker: 'ants',
-      catchphrase: "Everything's black!"
-    },
-    {
-      name: 'Chair Waiter',
-      marker: 'chairwaiter',
-      catchphrase: 'Aids!'
-    },
-    {
-      name: 'Alan Rails',
-      marker: 'alanrails',
-      catchphrase: 'I could have just used a ghost train'
-    },
-    {
-      name: 'Einstein Rick',
-      marker: 'einstein',
-      catchphrase: 'Aids!'
-    },
-    {
-      name: 'Fishhead Rick',
-      marker: 'fishheadrick',
-      catchphrase: 'Aids!'
-    },
-    {
-      name: 'Fishhead Morty',
-      marker: 'fishheadmorty',
-      catchphrase: 'Aids!'
-    },
-    {
-      name: 'Baby Legs',
-      marker: 'babylegs',
-      catchphrase: 'Ooh I learned a valuable lesson here today'
-    },
-    {
-      name: 'Beth',
-      marker: 'beth',
-      catchphrase: 'Aids!'
-    },
-    {
-      name: 'Amber Heard',
-      marker: 'amberturd',
-      catchphrase: 'Aids!'
-    },
-    {
-      name: 'Big Morty',
-      marker: 'bigmorty',
-      catchphrase: 'Ah, Bubblah'
-    },
-    {
-      name: 'Bird Person',
-      marker: 'birdperson',
-      catchphrase: "Don't be gross Tammy"
-    },
-    {
-      name: 'Blamphs',
-      marker: 'plumbus',
-      catchphrase: 'Are you using this Fleeb juice'
-    },
-    {
-      name: 'Evil Morty', 
-      marker: 'evilmorty',
-      catchphrase: 'This seems like a good time for a drink, and a cold, calculated speech with sinister overtones'
-    },
-    {
-      name: 'Blim Blam',
-      marker: 'blimblam',
-      catchphrase: 'Best door ever'
-    },
-    {
-      name: 'Bobby Moynihan',
-      marker: 'bobby',
-      catchphrase: 'Aids!'
-    },
-    {
-      name: 'Dumb Ass Bug',
-      marker: 'dumbassbug',
-      catchphrase: "I'm just a dumb-ass bug"
-    },
-    {
-      name: 'Chris',
-      marker: 'chris',
-      catchphrase: "Peace among worlds"
-    },
-    {
-      name: 'Concerto',
-      marker: 'concerto',
-      catchphrase: "Peace among worlds"
-    },
-    {
-      name: 'Cool Rick',
-      marker: 'coolrick',
-      catchphrase: "What can I say? I'm cool Rick"
-    },
-    {
-      name: 'Cop Morty',
-      marker: 'copmorty',
-      catchphrase: "Nothing's wrong with putting your faith in a Morty."
-    },
-    {
-      name: 'Cousin Nicky',
-      marker: 'cousinnicky',
-      catchphrase: "I'm walkin' here"
-    },
-    {
-      name: 'Crocubot',
-      marker: 'crocubot',
-      catchphrase: "You fell into a vat of redundancy"
-    },
-    {
-      name: 'Daron Jefferson',
-      marker: 'daron',
-      catchphrase: "The cone-nipple people will rule this world"
-    },
+    // {
+    //   name: 'Summer',
+    //   marker: 'summer',
+    //   catchphrase: "Let's lick tits"
+    // },
+    // {
+    //   name: 'Jerry',
+    //   marker: 'jerry',
+    //   catchphrase: 'I think I can crawl through a tube'
+    // },
+    // {
+    //   name: 'Ants In My Eyes Johnson',
+    //   marker: 'ants',
+    //   catchphrase: "Everything's black!"
+    // },
+    // {
+    //   name: 'Chair Waiter',
+    //   marker: 'chairwaiter',
+    //   catchphrase: 'Aids!'
+    // },
+    // {
+    //   name: 'Alan Rails',
+    //   marker: 'alanrails',
+    //   catchphrase: 'I could have just used a ghost train'
+    // },
+    // {
+    //   name: 'Einstein Rick',
+    //   marker: 'einstein',
+    //   catchphrase: 'Aids!'
+    // },
+    // {
+    //   name: 'Fishhead Rick',
+    //   marker: 'fishheadrick',
+    //   catchphrase: 'Aids!'
+    // },
+    // {
+    //   name: 'Fishhead Morty',
+    //   marker: 'fishheadmorty',
+    //   catchphrase: 'Aids!'
+    // },
+    // {
+    //   name: 'Baby Legs',
+    //   marker: 'babylegs',
+    //   catchphrase: 'Ooh I learned a valuable lesson here today'
+    // },
+    // {
+    //   name: 'Beth',
+    //   marker: 'beth',
+    //   catchphrase: 'Aids!'
+    // },
+    // {
+    //   name: 'Amber Heard',
+    //   marker: 'amberturd',
+    //   catchphrase: 'Aids!'
+    // },
+    // {
+    //   name: 'Big Morty',
+    //   marker: 'bigmorty',
+    //   catchphrase: 'Ah, Bubblah'
+    // },
+    // {
+    //   name: 'Bird Person',
+    //   marker: 'birdperson',
+    //   catchphrase: "Don't be gross Tammy"
+    // },
+    // {
+    //   name: 'Blamphs',
+    //   marker: 'plumbus',
+    //   catchphrase: 'Are you using this Fleeb juice'
+    // },
+    // {
+    //   name: 'Evil Morty', 
+    //   marker: 'evilmorty',
+    //   catchphrase: 'This seems like a good time for a drink, and a cold, calculated speech with sinister overtones'
+    // },
+    // {
+    //   name: 'Blim Blam',
+    //   marker: 'blimblam',
+    //   catchphrase: 'Best door ever'
+    // },
+    // {
+    //   name: 'Bobby Moynihan',
+    //   marker: 'bobby',
+    //   catchphrase: 'Aids!'
+    // },
+    // {
+    //   name: 'Dumb Ass Bug',
+    //   marker: 'dumbassbug',
+    //   catchphrase: "I'm just a dumb-ass bug"
+    // },
+    // {
+    //   name: 'Chris',
+    //   marker: 'chris',
+    //   catchphrase: "Peace among worlds"
+    // },
+    // {
+    //   name: 'Concerto',
+    //   marker: 'concerto',
+    //   catchphrase: "Peace among worlds"
+    // },
+    // {
+    //   name: 'Cool Rick',
+    //   marker: 'coolrick',
+    //   catchphrase: "What can I say? I'm cool Rick"
+    // },
+    // {
+    //   name: 'Cop Morty',
+    //   marker: 'copmorty',
+    //   catchphrase: "Nothing's wrong with putting your faith in a Morty."
+    // },
+    // {
+    //   name: 'Cousin Nicky',
+    //   marker: 'cousinnicky',
+    //   catchphrase: "I'm walkin' here"
+    // },
+    // {
+    //   name: 'Crocubot',
+    //   marker: 'crocubot',
+    //   catchphrase: "You fell into a vat of redundancy"
+    // },
+    // {
+    //   name: 'Daron Jefferson',
+    //   marker: 'daron',
+    //   catchphrase: "The cone-nipple people will rule this world"
+    // },
   ]
 
   function rando(min, max) {

@@ -84,8 +84,8 @@ header h1 {
   left: 50%;
   transform: translate(-50%, -50%); */
   margin: 0 auto;
-  width: 480px;
-  height: 480px;
+  /* width: 480px;
+  height: 480px; */
   display: grid;
   grid-template-columns: auto auto auto;
   grid-template-rows: auto auto auto;
@@ -106,9 +106,8 @@ header h1 {
   caret-color: rgba(0,0,0,0);
   transition: opacity 1s;
   cursor:pointer;
-  background-size: 160px !important;
-  /* background-position: bottom; */
-
+  width: 160px;
+  height: 160px;
 }
 
 .square:hover {
@@ -116,7 +115,12 @@ header h1 {
   transition: 700ms;
 }
 
-.rick { background: url("images/rick.jpeg") no-repeat; }
+.square img {
+ width: 160px;
+ height: 160px;
+}
+
+/* .rick { background: url("images/rick.jpeg") no-repeat; }
 .morty { background: url("images/morty.png") no-repeat; }
 .summer { background: url("images/summer.jpeg") no-repeat; }
 .jerry { background: url("images/jerry.png") no-repeat; }
@@ -142,7 +146,7 @@ header h1 {
 .copmorty { background: url('images/copmorty.jpeg') no-repeat; }
 .cousinnicky { background: url('images/cousinnicky.jpeg') no-repeat; }
 .crocubot { background: url('images/crocubot.jpeg') no-repeat; }
-.daron { background: url('images/dale.jpeg') no-repeat; }
+.daron { background: url('images/dale.jpeg') no-repeat; } */
 
 
 #reset {
