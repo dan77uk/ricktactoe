@@ -14,28 +14,22 @@ html {
   background-size: cover;
 }
 
-html, body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-}
-
 #bodyWrapper {
-  width: 100vw;
   height: 100vh;
+  width: 100vw;
   display: grid;
   grid-template-rows: 1fr 2fr 1fr;
 }
 
 header {
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 0 auto 40px auto;
   text-align: center;
+  padding-top: 30px;
 }
 
 header h1 {
   font-size: 6em;
-  padding: 40px 0;
   color: #eede78;
   font-family: 'Permanent Marker', cursive;
   transform: rotate(-3deg);
@@ -43,7 +37,7 @@ header h1 {
 }
 
 #intro {
-  margin: 0 auto;
+  margin: 60px auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,23 +53,43 @@ header h1 {
   border-radius: 50px 15px 50px 15px;
   font-family: 'Permanent Marker', cursive;
   color: #FFF;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  width: 80%;
+  text-align: center;
 }
 
-#versusInfo {
+#banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   color: rgb(107, 19, 19);
   position: fixed;
   width: 110%;
   top: 40%;
   transform: translate(0, -50%);
-  font-family: 'Permanent Marker', cursive;
-  font-size: 2rem;
   padding: 50px 150px;
-  text-align: center;
-  transform: rotate(-4deg);
+  transform: rotate(-3deg);
   margin-left: -5%;
   background: rgb(249,21,103);
   background: linear-gradient(193deg, rgba(249,21,103,1) 0%, rgba(228,58,182,1) 24%, rgba(255,216,0,1) 100%); 
+}
+
+#banner h3 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+#banner button {
+  margin-top: 20px;
+  transform: rotate(-6deg);
+  padding: 20px 60px;
+  cursor: pointer;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 2rem;
+  border-radius: 20px;
 }
 
 #gameBoard {
@@ -84,8 +98,8 @@ header h1 {
   left: 50%;
   transform: translate(-50%, -50%); */
   margin: 0 auto;
-  /* width: 480px;
-  height: 480px; */
+  width: 620px;
+  height: 620px;
   display: grid;
   grid-template-columns: auto auto auto;
   grid-template-rows: auto auto auto;
@@ -100,24 +114,20 @@ header h1 {
   border:solid 1px #1e797e;
   align-items: center;
   justify-content: center;
-  font-size: 6em;
-  height: 100%;
-  width: 100%;
   caret-color: rgba(0,0,0,0);
-  transition: opacity 1s;
   cursor:pointer;
-  width: 160px;
-  height: 160px;
+  width: 200px;
+  height: 200px;
 }
 
 .square:hover {
   background: rgba(2, 169, 247, 0.8);
-  transition: 700ms;
+  transition: 900ms;
 }
 
 .square img {
- width: 160px;
- height: 160px;
+  width: 200px;
+  height: 200px;
 }
 
 /* .rick { background: url("images/rick.jpeg") no-repeat; }
@@ -148,26 +158,56 @@ header h1 {
 .crocubot { background: url('images/crocubot.jpeg') no-repeat; }
 .daron { background: url('images/dale.jpeg') no-repeat; } */
 
+@media only screen and (max-width: 760px) {
 
-#reset {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 50px 150px;
+  header h1 {
+    font-size: 4em;
+    padding: 30px 0 0 0;
+  }
 
+  #gameBoard {
+    width: 440px;
+    height: 440px;
+  }
+
+  .square, .square img {
+    width: 140px;
+    height: 140px;
+  }
+  
 }
 
-@media only screen and (max-width: 540px) {
+@media only screen and (max-width: 560px) {
   #gameBoard {
-    width: 360px;
-    height: 360px;
+    width: 320px;
+    height: 320px;
+    border: solid 5px #ee7878;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 5px #eede78, 1px 1px 1px 5px #e4d724;
+  }
+
+  .square, .square img {
+    width: 103px;
+    height: 103px;
   }
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 440px) {
+
+  header h1 {
+    font-size: 3em;
+  }
+
   #gameBoard {
-    width: 240px;
-    height: 240px;
+    width: 244px;
+    height: 244px;
+    border: solid 2px #ee7878;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 2px #eede78, 1px 1px 1px 2px #e4d724;
+  }
+
+  .square, .square img {
+    width: 80px;
+    height: 80px;
   }
 }

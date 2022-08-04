@@ -27,6 +27,7 @@ const gameBoard = (() => {
         // Update DOM board
         const playerImage = document.createElement('img')
         playerImage.src = gameplayManagement.activePlayer.image
+        playerImage.alt = `An avatar of ${gameplayManagement.activePlayer.name}`
         cell.append(playerImage)
         cell.classList.add(gameplayManagement.activePlayer.marker)
         
@@ -67,34 +68,42 @@ const gameplayManagement = (() => {
     }
   }
 
-  const players = [
+  let players = [
     {
+      id: 1,
       name: 'Rick',
       marker: 'rick',
       catchphrase: 'Aids',
       image: 'images/rick.jpeg' 
     },
     {
+      id: 2,
       name: 'Morty',
       marker: 'morty',
       catchphrase: 'Oh jeez',
       image: 'images/morty.png'
     },
-    // {
-    //   name: 'Summer',
-    //   marker: 'summer',
-    //   catchphrase: "Let's lick tits"
-    // },
-    // {
-    //   name: 'Jerry',
-    //   marker: 'jerry',
-    //   catchphrase: 'I think I can crawl through a tube'
-    // },
-    // {
-    //   name: 'Ants In My Eyes Johnson',
-    //   marker: 'ants',
-    //   catchphrase: "Everything's black!"
-    // },
+    {
+      id: 3,
+      name: 'Summer',
+      marker: 'summer',
+      catchphrase: "Let's lick tits",
+      image: 'images/summer.jpeg'
+    },
+    {
+      id: 4,
+      name: 'Jerry',
+      marker: 'jerry',
+      catchphrase: 'I think I can crawl through a tube',
+      image: 'images/jerry.png'
+    },
+    {
+      id: 5,
+      name: 'Ants In My Eyes Johnson',
+      marker: 'ants',
+      catchphrase: "Everything's black!",
+      image: 'images/antsinmyeyes.jpeg'
+    },
     // {
     //   name: 'Chair Waiter',
     //   marker: 'chairwaiter',
@@ -212,36 +221,43 @@ const gameplayManagement = (() => {
   }
 
   function playerSelect() {
-    return players[rando(0, players.length)]
+    const player = players[rando(0, players.length)]
+    const index = players.findIndex((ele => ele.id === player.id))
+    players.splice(index, 1)
+    return player
   }
 
-
   const playerA = playerSelect()
-  let playerB = playerSelect()
-  if (playerA === playerB) { playerB = playerSelect() }
+  const playerB = playerSelect()
+
 
   // Decide which player starts game and announce on the DOM
-  let activePlayer = randomPlayerStart()
-  const initialGreeting = `${activePlayer.name}, you're up first `
-  let playerName = document.querySelector('#player-name')
-  // playerName.innerText = initialGreeting
+  const activePlayer = randomPlayerStart()
 
-  const containerMain = document.querySelector('#bodyWrapper')
-  const versusTitle = document.createElement('h3')
-  versusTitle.id = 'versusInfo'
-  versusTitle.innerText = `It's ${playerA.name} taking on ${playerB.name}`
-  containerMain.append(versusTitle)
+  // Required selecters
+  const wrapper = document.querySelector('#bodyWrapper')
+  const playerName = document.querySelector('#player-name')
+
+  const banner = document.createElement('div')
+  const bannerText = document.createElement('h3')
+  banner.append(bannerText)
+  banner.id = 'banner'
+
+  const test = document.querySelector('#intro')
+  const subHead = document.querySelector('#subHead')
+  const gameboard = document.querySelector('#gameBoard')
+
+  // Announce game players
+  bannerText.innerText = `It's ${playerA.name} taking on ${playerB.name}`
+  wrapper.append(banner)
   
   setTimeout(() => {
-    versusTitle.style.display = 'none'
-    const test = document.querySelector('#intro')
-    const wrapper = document.querySelector('#bodyWrapper')
+    banner.style.display = 'none'
     test.style.display = 'flex'
     wrapper.style.background = 'rgba(23,45,56,.8)'
-    playerName.innerText = initialGreeting
-  }, 2000)
+    playerName.innerText = `${activePlayer.name}, you're up first `
+  }, 4000)
   
-
   // Initial game state
   let remainingCells = 9
   let announceWinner = false
@@ -262,12 +278,18 @@ const gameplayManagement = (() => {
     winningCombinations.forEach((item) => {
       if(gameBoard.board[item[0]] === this.activePlayer.marker && gameBoard.board[item[1]] === this.activePlayer.marker && gameBoard.board[item[2]] === this.activePlayer.marker) {
         this.announceWinner = true
-        const subHead = document.querySelector('#subHead')
-        subHead.innerText = `${this.activePlayer.catchphrase}! ${this.activePlayer.name} wins!`
-        muteBoard()
-        resetGame()
+        announceWinningPlayer(this.activePlayer)
       }
     })
+  }
+
+  function announceWinningPlayer (player) {
+    muteBoard()
+    resetGame()
+    subHead.style.display = 'none'
+    banner.style.display = 'flex'
+    bannerText.innerText = `${player.catchphrase}! ${player.name} wins!`
+    wrapper.append(banner)
   }
 
   function alertNextPlayer() {
@@ -279,27 +301,25 @@ const gameplayManagement = (() => {
   }
 
   function tieGame() {
-    const subHead = document.querySelector('#subHead')
-    subHead.innerText = 'Tie game!'
+    subHead.style.display = 'none'
+    banner.style.display = 'flex'
+    banner.innerText = 'Tie game!'
+    wrapper.append(banner)
     resetGame()
   }
 
   function muteBoard() {
-    const cells = document.querySelector('#gameBoard')
-    Array.from(cells.children).forEach((cell) => {
+    Array.from(gameboard.children).forEach((cell) => {
       cell.style.pointerEvents = 'none'
     })
   }
 
   function resetGame() {
     const resetButton = document.createElement('button')
-    const container = document.querySelector('#bodyWrapper')
-    const gameboard = document.querySelector('#gameBoard')
     gameboard.style.opacity = '.7'
-
     resetButton.id = 'reset'
     resetButton.textContent = 'Play Again?'
-    container.append(resetButton)
+    banner.append(resetButton)
     resetButton.addEventListener('click', () => {
       window.location.reload(false)
     })
