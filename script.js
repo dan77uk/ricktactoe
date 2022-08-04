@@ -87,7 +87,7 @@ const gameplayManagement = (() => {
       id: 3,
       name: 'Summer',
       marker: 'summer',
-      catchphrase: "Let's lick tits",
+      catchphrase: "Let's lick tits ",
       image: 'images/summer.jpeg'
     },
     {
@@ -104,16 +104,13 @@ const gameplayManagement = (() => {
       catchphrase: "Everything's black!",
       image: 'images/antsinmyeyes.jpeg'
     },
-    // {
-    //   name: 'Chair Waiter',
-    //   marker: 'chairwaiter',
-    //   catchphrase: 'Aids!'
-    // },
-    // {
-    //   name: 'Alan Rails',
-    //   marker: 'alanrails',
-    //   catchphrase: 'I could have just used a ghost train'
-    // },
+    {
+      id: 6,
+      name: 'Alan Rails',
+      marker: 'alanrails',
+      catchphrase: 'I could have just used a ghost train',
+      image: 'images/alanrails.jpeg'
+    },
     // {
     //   name: 'Einstein Rick',
     //   marker: 'einstein',
@@ -230,7 +227,6 @@ const gameplayManagement = (() => {
   const playerA = playerSelect()
   const playerB = playerSelect()
 
-
   // Decide which player starts game and announce on the DOM
   const activePlayer = randomPlayerStart()
 
@@ -246,16 +242,18 @@ const gameplayManagement = (() => {
   const test = document.querySelector('#intro')
   const subHead = document.querySelector('#subHead')
   const gameboard = document.querySelector('#gameBoard')
+  const announcement = document.querySelector('#announcement')
 
   // Announce game players
-  bannerText.innerText = `It's ${playerA.name} taking on ${playerB.name}`
-  wrapper.append(banner)
-  
+  announcement.innerText = `It's ${playerA.name} taking on ${playerB.name}! Show me what you got!`
+  gameboard.append(announcement)
+  playerName.innerText = `${activePlayer.name}, you're up first `
+
   setTimeout(() => {
+    announcement.style.display ='none'
     banner.style.display = 'none'
-    test.style.display = 'flex'
+    test.style.opacity = '1'
     wrapper.style.background = 'rgba(23,45,56,.8)'
-    playerName.innerText = `${activePlayer.name}, you're up first `
   }, 4000)
   
   // Initial game state
@@ -286,14 +284,14 @@ const gameplayManagement = (() => {
   function announceWinningPlayer (player) {
     muteBoard()
     resetGame()
-    subHead.style.display = 'none'
-    banner.style.display = 'flex'
-    bannerText.innerText = `${player.catchphrase}! ${player.name} wins!`
-    wrapper.append(banner)
+    subHead.style.opacity = '0'
+    announcement.style.display = 'flex'
+    announcement.innerText = `${player.catchphrase}! ${player.name} wins!`
+    gameboard.append(announcement)
   }
 
   function alertNextPlayer() {
-    this.activePlayer === playerA ? playerName.innerText = playerB.name : playerName.innerText = playerA.name
+    this.activePlayer === playerA ? playerName.innerText = `It's ${playerB.name}'s turn` : playerName.innerText = `${playerA.name}, you're up...`
   }
 
   function nextPlayer() {
