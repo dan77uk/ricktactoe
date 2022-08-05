@@ -62,10 +62,6 @@ header h1 {
 }
 
 #gameBoard {
-  /* position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
   position: relative;
   margin-top: 90px;
   width: 620px;
@@ -178,42 +174,57 @@ header h1 {
   }
 
   #gameBoard {
-    width: 440px;
-    height: 440px;
+    width: 540px;
+    height: 540px;
+    border: solid 5px #ee7878;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 7px #eede78, 1px 1px 1px 7px #e4d724;
   }
 
   .square, .square img {
-    width: 140px;
-    height: 140px;
+    width: 176px;
+    height: 176px;
   }
 
   #announcement {
-    width: 440px;
-    height: 440px;
+    width: 530px;
+    height: 530px;
     font-size: 3rem;
   }
-  
+
+  #gameState p {
+    font-size: 1.5rem;
+  }
 }
 
 @media only screen and (max-width: 560px) {
   #gameBoard {
-    width: 320px;
-    height: 320px;
-    border: solid 5px #ee7878;
-    border-radius: 5px;
-    box-shadow: 1px 1px 1px 5px #eede78, 1px 1px 1px 5px #e4d724;
+    width: 420px;
+    height: 420px;
   }
 
   .square, .square img {
-    width: 103px;
-    height: 103px;
+    width: 136px;
+    height: 136px;
   }
 
   #announcement {
-    width: 320px;
-    height: 320px;
-    font-size: 1.5rem;
+    width: 410px;
+    height: 410px;
   }
+
+  .playerId{
+    font-size: 2.5rem !important;
+  }
+  
+  #announcement h3 {
+    font-size: 1.5rem !important;
+  }
+
+  #announcement h3 span {
+    font-size: 3rem !important;
+  }
+
 }
 
 @media only screen and (max-width: 440px) {
@@ -223,21 +234,43 @@ header h1 {
   }
 
   #gameBoard {
-    width: 244px;
-    height: 244px;
+    width: 320px;
+    height: 320px;
     border: solid 2px #ee7878;
-    border-radius: 5px;
-    box-shadow: 1px 1px 1px 2px #eede78, 1px 1px 1px 2px #e4d724;
+    box-shadow: 1px 1px 1px 3px #eede78, 1px 1px 1px 3px #e4d724;
+    margin-top: 40px;
   }
 
   .square, .square img {
-    width: 80px;
-    height: 80px;
+    width: 105px;
+    height: 105px;
   }
 
   #announcement {
-    width: 244px;
-    height: 244px;
+    width: 315px;
+    height: 315px;
+  }
+
+  .playerId {
+    margin: 10px 0;
+    font-size: 1.8rem !important;
+  }
+
+  #announcement h3 {
+    font-size: 1rem !important;
+  }
+
+  #announcement h3 span {
+    font-size: 1.5rem !important;
+  }
+
+  #gameState p {
     font-size: 1rem;
   }
+
+  #reset {
+    font-size: 1rem;
+    padding: 10px 40px;
+  }
+
 }

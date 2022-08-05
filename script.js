@@ -367,10 +367,10 @@ const gameplayManagement = (() => {
   }
 
   function tieGame() {
-    subHead.style.display = 'none'
-    announcement.style.display = 'flex'
-    announcement.innerText = 'Tie game!'
-    wrapper.append(announcement)
+    announcement.style.display = 'grid'
+    announcement.style.background = 'rgba(2, 169, 247, 0.8)'
+    announcement.innerHTML = `<h3><span class='playerId'>Tie game!</span></h3>`
+    gameboard.append(announcement)
     resetGame()
   }
 
