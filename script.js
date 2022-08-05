@@ -108,7 +108,7 @@ const gameplayManagement = (() => {
       id: 6,
       name: 'Alan Rails',
       marker: 'alanrails',
-      catchphrase: 'I could have just used a ghost train',
+      catchphrase: 'He could have just used a ghost train ',
       image: 'images/alanrails.jpeg'
     },
     // {
@@ -234,26 +234,20 @@ const gameplayManagement = (() => {
   const wrapper = document.querySelector('#bodyWrapper')
   const playerName = document.querySelector('#player-name')
 
-  const banner = document.createElement('div')
-  const bannerText = document.createElement('h3')
-  banner.append(bannerText)
-  banner.id = 'banner'
-
-  const test = document.querySelector('#intro')
+  const gameState = document.querySelector('#intro')
   const subHead = document.querySelector('#subHead')
   const gameboard = document.querySelector('#gameBoard')
   const announcement = document.querySelector('#announcement')
 
   // Announce game players
-  announcement.innerText = `It's ${playerA.name} taking on ${playerB.name}! Show me what you got!`
+  announcement.innerHTML = `<h2><span>${playerA.name}</span> V <span>${playerB.name}</span></h2>`
   gameboard.append(announcement)
-  playerName.innerText = `${activePlayer.name}, you're up first `
+  playerName.innerText = `${activePlayer.name}, you're up first, show us what you got!`
 
   setTimeout(() => {
     announcement.style.display ='none'
-    banner.style.display = 'none'
-    test.style.opacity = '1'
-    wrapper.style.background = 'rgba(23,45,56,.8)'
+    gameState.style.opacity = '1'
+    wrapper.style.background = 'rgba(0, 0, 0, .5)'
   }, 4000)
   
   // Initial game state
@@ -282,12 +276,14 @@ const gameplayManagement = (() => {
   }
 
   function announceWinningPlayer (player) {
-    muteBoard()
-    resetGame()
-    subHead.style.opacity = '0'
+    subHead.style.display = 'none'
+    gameState.style.background = 'rgba(0,0,0,0)'
     announcement.style.display = 'flex'
-    announcement.innerText = `${player.catchphrase}! ${player.name} wins!`
+    announcement.style.background = 'rgba(2, 169, 247, 0.8)'
+    announcement.innerHTML = `<h3>${player.catchphrase}<span>${player.name} wins!</span></h3>`
     gameboard.append(announcement)
+    resetGame()
+    muteBoard()
   }
 
   function alertNextPlayer() {
@@ -300,9 +296,9 @@ const gameplayManagement = (() => {
 
   function tieGame() {
     subHead.style.display = 'none'
-    banner.style.display = 'flex'
-    banner.innerText = 'Tie game!'
-    wrapper.append(banner)
+    announcement.style.display = 'flex'
+    announcement.innerText = 'Tie game!'
+    wrapper.append(announcement)
     resetGame()
   }
 
@@ -314,10 +310,10 @@ const gameplayManagement = (() => {
 
   function resetGame() {
     const resetButton = document.createElement('button')
-    gameboard.style.opacity = '.7'
     resetButton.id = 'reset'
+    resetButton.style.pointerEvents = 'auto'
     resetButton.textContent = 'Play Again?'
-    banner.append(resetButton)
+    announcement.appendChild(resetButton)
     resetButton.addEventListener('click', () => {
       window.location.reload(false)
     })

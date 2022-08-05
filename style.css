@@ -10,23 +10,19 @@
 }
 
 body {
-  background: url("images/backdrop-min.jpg") no-repeat#24a0a7;
+  background: url('/images/backdrop-min.jpg') no-repeat;
   background-size: cover;
   height: 100vh;
-  width: 100vw;
 }
 
 #bodyWrapper {
-  height: 100vh;
-  width: 100vw;
-  display: grid; 
-  grid-template-rows: 1fr 1fr 1fr;
-  padding: 0;
+  display: grid;
 }
 
 #contentWrapper {
   max-width: 1280px;
   margin: 0 auto;
+  height: 100vh;
 }
 
 header {
@@ -44,71 +40,49 @@ header h1 {
 }
 
 #intro {
-  margin: 40px auto;
-  padding: 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(49,222,255, .5);
   display: flex;
   justify-content: center;
   align-items: center;
-  /* display: none; */
   opacity: 0;
+  font-family: 'Permanent Marker', cursive;
+  padding: 30px 0;
 }
 
 #intro p {
-  background: #ee7878;
-  background: rgb(249,21,103);
-  background: linear-gradient(193deg, rgba(249,21,103,1) 0%, rgba(228,58,182,1) 24%, rgba(255,216,0,1) 100%); 
-  padding: 20px 90px;
-  transform: rotate(-2deg);
   font-size: 1rem;
-  box-shadow:15px 10px 20px rgb(22, 22, 22);
-  border-radius: 50px 15px 50px 15px;
   font-family: 'Permanent Marker', cursive;
   color: #FFF;
-  font-size: 1rem;
+  font-size: 2rem;
   width: 80%;
   text-align: center;
 }
 
-#banner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  color: rgb(107, 19, 19);
-  position: fixed;
-  width: 110%;
-  top: 40%;
-  transform: translate(0, -50%);
-  padding: 50px 150px;
-  transform: rotate(-3deg);
-  margin-left: -5%;
-  background: rgb(249,21,103);
-  background: linear-gradient(193deg, rgba(249,21,103,1) 0%, rgba(228,58,182,1) 24%, rgba(255,216,0,1) 100%); 
-}
-
-#banner h3 {
+#reset {
   font-family: 'Permanent Marker', cursive;
-  font-size: 2rem;
-  width: 100%;
-  text-align: center;
-}
-
-#banner button {
-  margin-top: 20px;
-  transform: rotate(-6deg);
-  padding: 20px 60px;
   cursor: pointer;
-  font-family: 'Permanent Marker', cursive;
-  font-size: 2rem;
-  border-radius: 20px;
+  font-size: 1.5rem;
+  padding: 10px 60px;
+  border: solid 2px #e9d65d;
+  border-radius: 3px;
+  color: rgb(29, 49, 87);
+  background: #ffeb67;
+  transform: rotate(-2deg);
+}
+
+#reset:hover {
+  background: #ffe223;
+  transition: 300ms;
 }
 
 #gameBoard {
-  /* position: fixed;
+  position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); */
-  margin: 0 auto;
+  transform: translate(-50%, -50%);
   width: 620px;
   height: 620px;
   display: grid;
@@ -118,7 +92,6 @@ header h1 {
   border: solid 10px #ee7878;
   border-radius: 10px;
   box-shadow: 1px 1px 1px 10px #eede78, 1px 1px 1px 15px #e4d724;
-  transform: rotate(1deg);
 }
 
 .square {
@@ -144,51 +117,45 @@ header h1 {
 #announcement {
   position: absolute;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 620px;
-  height: 620px;
-  border-radius: 10px;
-  border: solid 10px #ee7878;
-  margin: -10px 0 0 -10px;
-  opacity: .8;
-  background: rgb(249,21,103);
-  background: linear-gradient(193deg, rgba(249,21,103,1) 0%, rgba(228,58,182,1) 24%, rgba(255,216,0,1) 100%); 
-  font-family: 'Permanent Marker', cursive;
-  font-size: 4rem;
+  width: 601px;
+  height: 601px;
   color: rgb(255, 255, 255);
   text-align: center;
   padding: 0 60px;
   line-height: 1;
 }
 
-/* .rick { background: url("images/rick.jpeg") no-repeat; }
-.morty { background: url("images/morty.png") no-repeat; }
-.summer { background: url("images/summer.jpeg") no-repeat; }
-.jerry { background: url("images/jerry.png") no-repeat; }
-.ants { background: url("images/antsinmyeyes.jpeg") no-repeat;}
-.chairwaiter { background: url("images/chairwaiter.jpeg") no-repeat; }
-.alanrails { background: url("images/alanrails.jpeg") no-repeat; }
-.einstein { background: url("images/einstein.jpeg") no-repeat; }
-.fishheadrick { background: url("images/fishheadrick.jpeg") no-repeat; }
-.fishheadmorty { background: url("images/fishheadmorty.jpeg") no-repeat;}
-.babylegs { background: url('images/babylegs.jpeg') no-repeat; }
-.beth { background: url('images/beth.jpeg') no-repeat; }
-.amberturd { background: url('images/amberturd.jpeg') no-repeat; }
-.bigmorty { background: url('images/bigmorty.jpeg') no-repeat; }
-.birdperson { background: url('images/birdperson.png') no-repeat; }
-.plumbus { background: url('images/plumbus.jpeg') no-repeat; }
-.evilmorty { background: url('images/evilmorty.jpeg') no-repeat; } 
-.blimblam { background: url('images/blimblam.jpeg') no-repeat; } 
-.bobby { background: url('images/bobby.jpeg') no-repeat; } 
-.dumbassbug { background: url('images/dumbassbug.jpeg') no-repeat; } 
-.chris { background: url('images/chris.jpeg') no-repeat; } 
-.concerto { background: url('images/concerto.jpeg') no-repeat; }
-.coolrick { background: url('images/coolrick.jpeg') no-repeat; }
-.copmorty { background: url('images/copmorty.jpeg') no-repeat; }
-.cousinnicky { background: url('images/cousinnicky.jpeg') no-repeat; }
-.crocubot { background: url('images/crocubot.jpeg') no-repeat; }
-.daron { background: url('images/dale.jpeg') no-repeat; } */
+#announcement h2 {
+  font-size: 1.5rem;
+}
+
+#announcement h2 span {
+  display: block;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 4rem;
+  margin: 20px 0;
+  filter: drop-shadow(10px 10px 15px #103e5e);
+  transform: rotate(-6deg);
+}
+
+#announcement h3 {
+  font-size: 2rem !important;
+  font-family: 'Permanent Marker', cursive;
+  filter: drop-shadow(10px 10px 15px #103e5e);
+  transform: rotate(2deg);
+}
+
+#announcement h3 span {
+  display: block;
+  margin-top: 60px;
+  font-family: 'Permanent Marker', cursive;
+  transform: rotate(-5deg);
+  font-size: 4rem !important;
+  color: rgb(255, 251, 0) 
+}
 
 @media only screen and (max-width: 760px) {
 
