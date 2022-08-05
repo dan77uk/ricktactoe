@@ -286,6 +286,27 @@ const gameplayManagement = (() => {
       catchphrase: "Oo-wee!",
       image: 'images/butthole.jpeg'
     },
+    {
+      id: 32,
+      name: "Photography Cyborg",
+      marker: 'photography',
+      catchphrase: "I am not staring at you. I am Cyborg photographer, just act natural",
+      image: 'images/photography.jpeg'
+    },
+    {
+      id: 33,
+      name: "Pickle Rick",
+      marker: 'pickle',
+      catchphrase: "The reason anyone would do this is, if they could, which they can't, would be because they could, which they can't.",
+      image: 'images/pickle.jpeg'
+    },
+    {
+      id: 34,
+      name: "Prince Nebulon",
+      marker: 'nebulon',
+      catchphrase: "Oh Rick, how dumb are you?",
+      image: 'images/nebulon.jpeg'
+    },
   ]
 
   function rando(min, max) {
