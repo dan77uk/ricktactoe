@@ -9,7 +9,7 @@
 }
 
 html {
-  background: url('/images/backdrop-min.jpg') no-repeat;
+  background: url('images/backdrop-min.jpg') no-repeat;
   background-size: cover;
   height: 100vh;
 }

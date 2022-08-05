@@ -227,7 +227,7 @@ const gameplayManagement = (() => {
       id: 23,
       name: "Johnny Depp",
       marker: 'johnnydepp',
-      catchphrase: "I love doing cocaine with you Jerry Smith!",
+      catchphrase: "You're my best friend, Jerry Smith. I love doing cocaine with you.",
       image: 'images/johnnydepp.jpeg'
     },
     {
@@ -306,6 +306,62 @@ const gameplayManagement = (() => {
       marker: 'nebulon',
       catchphrase: "Oh Rick, how dumb are you?",
       image: 'images/nebulon.jpeg'
+    },
+    {
+      id: 35,
+      name: "Principal Vagina",
+      marker: 'vagina',
+      catchphrase: "Principal Vagina here. Don't let the name fool you — I'm very much in charge.",
+      image: 'images/vagina.jpeg'
+    },
+    {
+      id: 36,
+      name: "Randy Dicknose",
+      marker: 'dicknose',
+      catchphrase: "Ha ha ha ha ha... I mean, wouldn't the cars always win...?",
+      image: 'images/dicknose.jpeg'
+    },
+    {
+      id: 37,
+      name: "Regular Legs",
+      marker: 'regularlegs',
+      catchphrase: "I'm coming, Baby Legs! I'm Regular Legs!",
+      image: 'images/regularlegs.jpeg'
+    },
+    {
+      id: 38,
+      name: "Ruben",
+      marker: 'ruben',
+      catchphrase: "Pearl Harbour.",
+      image: 'images/ruben.jpeg'
+    },
+    {
+      id: 39,
+      name: "Scary Terry",
+      marker: 'terry',
+      catchphrase: "Oh, no! I'm not wearing any pants!",
+      image: 'images/terry.jpeg'
+    },
+    {
+      id: 40,
+      name: "Scroopy Noopers",
+      marker: 'scroopy',
+      catchphrase: "Is everyone in your family an idiot?",
+      image: 'images/scroopy.jpeg'
+    },
+    {
+      id: 41,
+      name: "Sleepy Gary",
+      marker: 'sleepygary',
+      catchphrase: "Maybe we'll see Chewbacca?",
+      image: 'images/sleepygary.jpeg'
+    },
+    {
+      id: 42,
+      name: "Slippery Stair",
+      marker: 'slippery',
+      catchphrase: "Y'all need to ride down the stairs? My name is Slippely-Slippery Stair",
+      image: 'images/slipperystair.jpeg'
     },
   ]
 
