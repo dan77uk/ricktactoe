@@ -73,28 +73,28 @@ const gameplayManagement = (() => {
       id: 1,
       name: 'Rick',
       marker: 'rick',
-      catchphrase: 'Aids',
+      catchphrase: "I'm sorry, but your opinion means very little to me.",
       image: 'images/rick.jpeg'
     },
     {
       id: 2,
       name: 'Morty',
       marker: 'morty',
-      catchphrase: 'Oh jeez',
+      catchphrase: "Nobody exists on purpose. Nobody belongs anywhere. Everybody's gonna die. Come watch TV.",
       image: 'images/morty.png'
     },
     {
       id: 3,
       name: 'Summer',
       marker: 'summer',
-      catchphrase: "Let's lick tits ",
+      catchphrase: "No wonder you're constantly fighting with each other & behind schedule!",
       image: 'images/summer.jpeg'
     },
     {
       id: 4,
       name: 'Jerry',
       marker: 'jerry',
-      catchphrase: 'I think I can crawl through a tube',
+      catchphrase: "Take your attitude to the men's section of K-Mart, because you need to cut me some slack...sss!",
       image: 'images/jerry.png'
     },
     {
@@ -111,31 +111,125 @@ const gameplayManagement = (() => {
       catchphrase: 'He could have just used a ghost train ',
       image: 'images/alanrails.jpeg'
     },
-    // {
-    //   name: 'Einstein Rick',
-    //   marker: 'einstein',
-    //   catchphrase: 'Aids!'
-    // },
-    // {
-    //   name: 'Fishhead Rick',
-    //   marker: 'fishheadrick',
-    //   catchphrase: 'Aids!'
-    // },
-    // {
-    //   name: 'Fishhead Morty',
-    //   marker: 'fishheadmorty',
-    //   catchphrase: 'Aids!'
-    // },
-    // {
-    //   name: 'Baby Legs',
-    //   marker: 'babylegs',
-    //   catchphrase: 'Ooh I learned a valuable lesson here today'
-    // },
-    // {
-    //   name: 'Beth',
-    //   marker: 'beth',
-    //   catchphrase: 'Aids!'
-    // },
+    {
+      id: 7,
+      name: 'Abradolf Lincler',
+      marker: 'lincler',
+      catchphrase: "Prepare to be emancipated, from your own inferior genes!",
+      image: "images/hitler.jpeg"
+    },
+    {
+      id: 8,
+      name: 'Baby Legs',
+      marker: 'babylegs',
+      catchphrase: 'Ooh I learned a valuable lesson here today!',
+      image: 'images/babylegs.jpeg'
+    },
+    {
+      id: 9,
+      name: 'Big Morty',
+      marker: 'bigmorty',
+      catchphrase: 'Ah, Bubblah!',
+      image: 'images/bigmorty.jpeg'
+    },
+    {
+      id: 10,
+      name: 'Bird Person',
+      marker: 'birdperson',
+      catchphrase: "Don't be gross Tammy",
+      image: 'images/birdperson.png'
+    },
+    {
+      id: 11,
+      name: 'Blim Blam',
+      marker: 'blimblam',
+      catchphrase: 'Cards on the table: I am a murderer that eats babies and I came to this planet to eat babies!',
+      image: 'images/blimblam.jpeg'
+    },
+    {
+      id: 12,
+      name: 'Campaign Manager Morty',
+      marker: 'ccm',
+      catchphrase: "You don't pay me to have faith! And we're the same age!",
+      image: 'images/campaignmorty.jpeg'
+    },
+    {
+      id: 13,
+      name: 'Cop Morty',
+      marker: 'copmorty',
+      catchphrase: "Nothing's wrong with putting your faith in a Morty.",
+      image: 'images/copmorty.jpeg'
+    },
+    {
+      id: 14,
+      name: 'Cousin Nicky',
+      marker: 'cousinnicky',
+      catchphrase: "I'm walkin' here",
+      image: 'images/cousinnicky.jpeg'
+    },
+    {
+      id: 15,
+      name: 'Doofus Rick',
+      marker: 'doofus',
+      catchphrase: "I'm not doofus Rick! I'm Rick J-19-Zeta-7",
+      image: 'images/doofus.jpeg'
+    },
+    {
+      id: 16,
+      name: 'Evil Morty',
+      marker: 'evil',
+      catchphrase: "This seems like a good time for a drink, and a cold, calculated speech with sinister overtones",
+      image: 'images/evilmorty.jpeg'
+    },
+    {
+      id: 17,
+      name: 'Eyehole Man',
+      marker: 'eyehole',
+      catchphrase: "Get up on outta here with my eyeholes!",
+      image: 'images/eyehole.jpeg'
+    },
+    {
+      id: 18,
+      name: 'Fat Morty',
+      marker: 'fatmorty',
+      catchphrase: "I thought I was left-handed Morty?",
+      image: 'images/fatmorty.jpeg'
+    },
+    {
+      id: 19,
+      name: "Frankenstein's Monster",
+      marker: 'frankenstein',
+      catchphrase: "I was on the wrong side of the pitchfork on this one.",
+      image: 'images/frankenstein.jpeg'
+    },
+    {
+      id: 20,
+      name: "Ice T",
+      marker: 'icet',
+      catchphrase: "I care now!",
+      image: 'images/icet.jpeg'
+    },
+    {
+      id: 21,
+      name: "Insurance Rick",
+      marker: 'insurancerick',
+      catchphrase: "Scuse me, sir, is your Morty insured?",
+      image: 'images/insurancerick.jpeg'
+    },
+    {
+      id: 22,
+      name: "Celebrity Jerry",
+      marker: 'celebrityjerry',
+      catchphrase: "I love doing cocaine with you Johnny Depp!",
+      image: 'images/celebrityjerry.jpeg'
+    },
+    {
+      id: 23,
+      name: "Johnny Depp",
+      marker: 'johnnydepp',
+      catchphrase: "I love doing cocaine with you Jerry Smith!",
+      image: 'images/johnnydepp.jpeg'
+    },
     // {
     //   name: 'Amber Heard',
     //   marker: 'amberturd',
@@ -238,7 +332,7 @@ const gameplayManagement = (() => {
   const announcement = document.querySelector('#announcement')
 
   // Announce game players
-  announcement.innerHTML = `<h2><span>${playerA.name}</span> V <span>${playerB.name}</span></h2>`
+  announcement.innerHTML = `<h2><span class='playerId'>${playerA.name}</span><span id='versus'>V</span><span class='playerId'>${playerB.name}</span></h2>`
   gameboard.append(announcement)
   gameState.innerHTML = `<p>${activePlayer.name}, you're up first, show us what you got!</p>`
 
@@ -246,7 +340,7 @@ const gameplayManagement = (() => {
     announcement.style.display = 'none'
     gameState.style.opacity = '1'
     wrapper.style.background = 'rgba(0, 0, 0, .5)'
-  }, 4000)
+  }, 3000)
 
   // Initial game state
   let remainingCells = 9

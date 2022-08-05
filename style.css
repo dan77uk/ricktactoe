@@ -112,21 +112,29 @@ header h1 {
 }
 
 #announcement h2 {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
-#announcement h2 span {
+#versus {
+  border: double 5px;
+  background: #eede78;
+  color: #fff;
+  padding: 8px 13px;
+  font-weight: 1000;
+  border-radius: 50px;
+}
+
+#announcement .playerId {
   display: block;
   font-family: 'Permanent Marker', cursive;
   font-size: 4rem;
-  margin: 20px 0;
   filter: drop-shadow(10px 10px 15px #103e5e);
   transform: rotate(-6deg);
+  line-height: 1;
+  margin: 40px 0;
 }
 
 #announcement h3 {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
   font-size: 2rem !important;
   font-family: 'Permanent Marker', cursive;
   filter: drop-shadow(10px 10px 15px #103e5e);
@@ -134,6 +142,8 @@ header h1 {
 }
 
 #announcement h3 span {
+  display: block;
+  margin-top: 40px;
   font-family: 'Permanent Marker', cursive;
   transform: rotate(-5deg);
   font-size: 4rem !important;
