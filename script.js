@@ -230,81 +230,62 @@ const gameplayManagement = (() => {
       catchphrase: "I love doing cocaine with you Jerry Smith!",
       image: 'images/johnnydepp.jpeg'
     },
-    // {
-    //   name: 'Amber Heard',
-    //   marker: 'amberturd',
-    //   catchphrase: 'Aids!'
-    // },
-    // {
-    //   name: 'Big Morty',
-    //   marker: 'bigmorty',
-    //   catchphrase: 'Ah, Bubblah'
-    // },
-    // {
-    //   name: 'Bird Person',
-    //   marker: 'birdperson',
-    //   catchphrase: "Don't be gross Tammy"
-    // },
-    // {
-    //   name: 'Blamphs',
-    //   marker: 'plumbus',
-    //   catchphrase: 'Are you using this Fleeb juice'
-    // },
-    // {
-    //   name: 'Evil Morty', 
-    //   marker: 'evilmorty',
-    //   catchphrase: 'This seems like a good time for a drink, and a cold, calculated speech with sinister overtones'
-    // },
-    // {
-    //   name: 'Blim Blam',
-    //   marker: 'blimblam',
-    //   catchphrase: 'Best door ever'
-    // },
-    // {
-    //   name: 'Bobby Moynihan',
-    //   marker: 'bobby',
-    //   catchphrase: 'Aids!'
-    // },
-    // {
-    //   name: 'Dumb Ass Bug',
-    //   marker: 'dumbassbug',
-    //   catchphrase: "I'm just a dumb-ass bug"
-    // },
-    // {
-    //   name: 'Chris',
-    //   marker: 'chris',
-    //   catchphrase: "Peace among worlds"
-    // },
-    // {
-    //   name: 'Concerto',
-    //   marker: 'concerto',
-    //   catchphrase: "Peace among worlds"
-    // },
-    // {
-    //   name: 'Cool Rick',
-    //   marker: 'coolrick',
-    //   catchphrase: "What can I say? I'm cool Rick"
-    // },
-    // {
-    //   name: 'Cop Morty',
-    //   marker: 'copmorty',
-    //   catchphrase: "Nothing's wrong with putting your faith in a Morty."
-    // },
-    // {
-    //   name: 'Cousin Nicky',
-    //   marker: 'cousinnicky',
-    //   catchphrase: "I'm walkin' here"
-    // },
-    // {
-    //   name: 'Crocubot',
-    //   marker: 'crocubot',
-    //   catchphrase: "You fell into a vat of redundancy"
-    // },
-    // {
-    //   name: 'Daron Jefferson',
-    //   marker: 'daron',
-    //   catchphrase: "The cone-nipple people will rule this world"
-    // },
+    {
+      id: 24,
+      name: "King Flippy Nips",
+      marker: 'flippynips',
+      catchphrase: "Knock 'em dead you!",
+      image: 'images/flippynips.jpeg'
+    },
+    {
+      id: 25,
+      name: "King Jellybean",
+      marker: 'jellybean',
+      catchphrase: "How are you today? I'm Mr. Jelly Bean!",
+      image: 'images/jellybean.jpeg'
+    },
+    {
+      id: 26,
+      name: "Krombopulos Michael",
+      marker: 'krombopulos',
+      catchphrase: "Oh boy, here I go killing again!",
+      image: 'images/krombopolus.jpeg'
+    },
+    {
+      id: 27,
+      name: "Mr. Beauregard",
+      marker: 'beauregard',
+      catchphrase: "Ladies and gentlemen, marmalade is served!",
+      image: 'images/beauregard.jpeg'
+    },
+    {
+      id: 28,
+      name: "Mr. Booby Buyer",
+      marker: 'boobybuyer',
+      catchphrase: "I'll buy those boobies for 25 shmeckels!",
+      image: 'images/boobybuyer.jpeg'
+    },
+    {
+      id: 29,
+      name: "Mr. Meeseeks",
+      marker: 'meeseeks',
+      catchphrase: "You gotta relax!",
+      image: 'images/meeseeks.jpeg'
+    },
+    {
+      id: 30,
+      name: "Mr. Needful",
+      marker: 'needful',
+      catchphrase: "What a terrible waste of a monkey paw!",
+      image: 'images/needful.jpeg'
+    },
+    {
+      id: 31,
+      name: "Mr. Poopybutthole",
+      marker: 'butthole',
+      catchphrase: "Oo-wee!",
+      image: 'images/butthole.jpeg'
+    },
   ]
 
   function rando(min, max) {
