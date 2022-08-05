@@ -6,7 +6,7 @@ const playerFactory = (name, marker) => {
   }
 }
 
-const gameBoard = (() => { 
+const gameBoard = (() => {
 
   // Create empty array for new game
   let board = Array(9).fill('')
@@ -30,7 +30,7 @@ const gameBoard = (() => {
         playerImage.alt = `An avatar of ${gameplayManagement.activePlayer.name}`
         cell.append(playerImage)
         cell.classList.add(gameplayManagement.activePlayer.marker)
-        
+
 
         // Remove event listener from completed cell/square and reduce remaining available cells
         cell.style.pointerEvents = 'none'
@@ -42,8 +42,8 @@ const gameBoard = (() => {
         // Check if game has a winner | select next player if false, anounce winner if true
         gameplayManagement.checkWinner()
 
-        if(gameplayManagement.announceWinner === false) { // If there is no winner
-          if(gameplayManagement.remainingCells > 0) { // If there are still squares to play
+        if (gameplayManagement.announceWinner === false) { // If there is no winner
+          if (gameplayManagement.remainingCells > 0) { // If there are still squares to play
             gameplayManagement.alertNextPlayer()
             gameplayManagement.nextPlayer()
           } else if (gameplayManagement.remainingCells < 1) { // If there are no squares left to play, announce tie game
@@ -74,7 +74,7 @@ const gameplayManagement = (() => {
       name: 'Rick',
       marker: 'rick',
       catchphrase: 'Aids',
-      image: 'images/rick.jpeg' 
+      image: 'images/rick.jpeg'
     },
     {
       id: 2,
@@ -233,52 +233,49 @@ const gameplayManagement = (() => {
   // Required selecters
   const wrapper = document.querySelector('#bodyWrapper')
   const playerName = document.querySelector('#player-name')
-
-  const gameState = document.querySelector('#intro')
-  const subHead = document.querySelector('#subHead')
+  const gameState = document.querySelector('#gameState')
   const gameboard = document.querySelector('#gameBoard')
   const announcement = document.querySelector('#announcement')
 
   // Announce game players
   announcement.innerHTML = `<h2><span>${playerA.name}</span> V <span>${playerB.name}</span></h2>`
   gameboard.append(announcement)
-  playerName.innerText = `${activePlayer.name}, you're up first, show us what you got!`
+  gameState.innerHTML = `<p>${activePlayer.name}, you're up first, show us what you got!</p>`
 
   setTimeout(() => {
-    announcement.style.display ='none'
+    announcement.style.display = 'none'
     gameState.style.opacity = '1'
     wrapper.style.background = 'rgba(0, 0, 0, .5)'
   }, 4000)
-  
+
   // Initial game state
   let remainingCells = 9
   let announceWinner = false
-  
+
   // Winning conditions
   const winningCombinations = [
-    [0,1,2],
-    [3,4,5],
-    [6,7,8],
-    [0,3,6],
-    [1,4,7],
-    [2,5,8],
-    [0,4,8],
-    [2,4,6],
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
   ]
 
   function checkWinner() {
     winningCombinations.forEach((item) => {
-      if(gameBoard.board[item[0]] === this.activePlayer.marker && gameBoard.board[item[1]] === this.activePlayer.marker && gameBoard.board[item[2]] === this.activePlayer.marker) {
+      if (gameBoard.board[item[0]] === this.activePlayer.marker && gameBoard.board[item[1]] === this.activePlayer.marker && gameBoard.board[item[2]] === this.activePlayer.marker) {
         this.announceWinner = true
         announceWinningPlayer(this.activePlayer)
       }
     })
   }
 
-  function announceWinningPlayer (player) {
-    subHead.style.display = 'none'
-    gameState.style.background = 'rgba(0,0,0,0)'
-    announcement.style.display = 'flex'
+  function announceWinningPlayer(player) {
+    gameState.style.display = 'none'
+    announcement.style.display = 'grid'
     announcement.style.background = 'rgba(2, 169, 247, 0.8)'
     announcement.innerHTML = `<h3>${player.catchphrase}<span>${player.name} wins!</span></h3>`
     gameboard.append(announcement)
@@ -287,7 +284,7 @@ const gameplayManagement = (() => {
   }
 
   function alertNextPlayer() {
-    this.activePlayer === playerA ? playerName.innerText = `It's ${playerB.name}'s turn` : playerName.innerText = `${playerA.name}, you're up...`
+    this.activePlayer === playerA ? gameState.innerHTML = `<p>It's ${playerB.name}'s turn</p>` : gameState.innerHTML = `<p>${playerA.name}, you're up...</p>`
   }
 
   function nextPlayer() {

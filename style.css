@@ -39,7 +39,7 @@ header h1 {
   line-height: 1;
 }
 
-#intro {
+#gameState {
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -52,30 +52,13 @@ header h1 {
   padding: 30px 0;
 }
 
-#intro p {
+#gameState p {
   font-size: 1rem;
   font-family: 'Permanent Marker', cursive;
   color: #FFF;
   font-size: 2rem;
   width: 80%;
   text-align: center;
-}
-
-#reset {
-  font-family: 'Permanent Marker', cursive;
-  cursor: pointer;
-  font-size: 1.5rem;
-  padding: 10px 60px;
-  border: solid 2px #e9d65d;
-  border-radius: 3px;
-  color: rgb(29, 49, 87);
-  background: #ffeb67;
-  transform: rotate(-2deg);
-}
-
-#reset:hover {
-  background: #ffe223;
-  transition: 300ms;
 }
 
 #gameBoard {
@@ -116,16 +99,16 @@ header h1 {
 
 #announcement {
   position: absolute;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-rows: auto;
   justify-content: center;
-  align-items: center;
+  align-items: center; 
   width: 601px;
   height: 601px;
   color: rgb(255, 255, 255);
   text-align: center;
   padding: 0 60px;
-  line-height: 1;
+  line-height: 1.5;
 }
 
 #announcement h2 {
@@ -142,6 +125,8 @@ header h1 {
 }
 
 #announcement h3 {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
   font-size: 2rem !important;
   font-family: 'Permanent Marker', cursive;
   filter: drop-shadow(10px 10px 15px #103e5e);
@@ -149,12 +134,28 @@ header h1 {
 }
 
 #announcement h3 span {
-  display: block;
-  margin-top: 60px;
   font-family: 'Permanent Marker', cursive;
   transform: rotate(-5deg);
   font-size: 4rem !important;
-  color: rgb(255, 251, 0) 
+  color: rgb(255, 251, 0);
+  line-height: 1;
+}
+
+#reset {
+  font-family: 'Permanent Marker', cursive;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 10px 60px;
+  border: solid 2px#e9d65d;
+  border-radius: 10px;
+  color: #e9d65d;
+  background: #ee7878;
+  transform: rotate(-2deg);
+}
+
+#reset:hover {
+  background: #b34646;
+  transition: 300ms;
 }
 
 @media only screen and (max-width: 760px) {
