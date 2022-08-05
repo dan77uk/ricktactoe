@@ -409,7 +409,7 @@ const gameplayManagement = (() => {
       id: 49,
       name: "Tomas Lipnip",
       marker: 'tommy',
-      catchphrase: "I'm going to have sex with one of you and eat the baby'.",
+      catchphrase: "I'm going to have sex with some of you and then eat the babies.'",
       image: 'images/tommy.jpeg'
     },
     {
@@ -447,7 +447,6 @@ const gameplayManagement = (() => {
 
   // Required selecters
   const wrapper = document.querySelector('#bodyWrapper')
-  const playerName = document.querySelector('#player-name')
   const gameState = document.querySelector('#gameState')
   const gameboard = document.querySelector('#gameBoard')
   const announcement = document.querySelector('#announcement')
