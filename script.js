@@ -283,7 +283,7 @@ const gameplayManagement = (() => {
       id: 31,
       name: "Mr. Poopybutthole",
       marker: 'butthole',
-      catchphrase: "Oo-wee!",
+      catchphrase: "Oo-wee! Hopefully you don't just waste your life",
       image: 'images/butthole.jpeg'
     },
     {
@@ -362,6 +362,69 @@ const gameplayManagement = (() => {
       marker: 'slippery',
       catchphrase: "Y'all need to ride down the stairs? My name is Slippely-Slippery Stair",
       image: 'images/slipperystair.jpeg'
+    },
+    {
+      id: 43,
+      name: "Slow Mobius",
+      marker: 'mobius',
+      catchphrase: "Ha ha! Sorry, dude! I'm just trying to show off my powers, bro!",
+      image: 'images/mobius.jpeg'
+    },
+    {
+      id: 44,
+      name: "Stealy",
+      marker: 'stealy',
+      catchphrase: "Alright, here we go. We're gonna just steal a couple of things.",
+      image: 'images/stealy.jpeg'
+    },
+    {
+      id: 45,
+      name: "Stu",
+      marker: 'stu',
+      catchphrase: "There's another real human in the simulator.",
+      image: 'images/stu.jpeg'
+    },
+    {
+      id: 46,
+      name: "Supernova",
+      marker: 'supernova',
+      catchphrase: "I conceived a child with Million Ants and it died inside me because it as HALF A MILLION ANTS AND HALF COLLAPSING STAR! And yes, he was better than you!",
+      image: 'images/supernova.jpeg'
+    },
+    {
+      id: 47,
+      name: "Tammy Guetermann",
+      marker: 'tammy',
+      catchphrase: "Have you ever been peed on before? Oh my God, yum!",
+      image: 'images/tammy.jpeg'
+    },
+    {
+      id: 48,
+      name: "President Curtis",
+      marker: 'president',
+      catchphrase: " I have pants at the Pentagon, Rhonda. It's in my contract.",
+      image: 'images/curtis.jpeg'
+    },
+    {
+      id: 49,
+      name: "Tomas Lipnip",
+      marker: 'tommy',
+      catchphrase: "I'm going to have sex with one of you and eat the baby'.",
+      image: 'images/tommy.jpeg'
+    },
+    {
+      id: 50,
+      name: "Tiny Rick",
+      marker: 'tinyrick',
+      catchphrase: "I'm really old. This isn't me.",
+      image: 'images/tinyrick.jpeg'
+    },
+    {
+      id: 51,
+      name: "Toxic Rick",
+      marker: 'toxicrick',
+      catchphrase: "Are you listening, you stupid little garbage person?!",
+      image: 'images/toxicrick.jpeg'
     },
   ]
 
