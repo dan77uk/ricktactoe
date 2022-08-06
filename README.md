@@ -1,6 +1,6 @@
 # The Odin Project - Tic Tac Toe App 
 
-[Live Site](https://danphillipsuk.github.io/ricktactoe/)
+[Live Site](https://dan77uk.github.io/ricktactoe/)
 
 An Odin Project module, as part of the full stack Javascript path, to further practice object creation and organising code in objects/modules in order to keep global namespace uncluttered.
 
